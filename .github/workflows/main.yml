@@ -60,6 +60,7 @@ jobs:
           head: pr-compile
           base: master
           title: 'Updates site files from latest Actions build'
-          body: >
-            Perhaps a multi-line description
-            about latest features and such.
+      
+       - name: Auto-merge
+          uses: ridedott/merge-me-action@master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
