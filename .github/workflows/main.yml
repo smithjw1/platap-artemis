@@ -38,7 +38,7 @@ jobs:
             fetch-depth: 1
 
       - name: Move compiled CSS to path within pr-pages branch
-        run: mv /tmp/platapp-artemis/assets/css .
+        run: mv -f /tmp/platapp-artemis/assets/css .
 
       - name: Add and Commit changes to pr-pages branch
         run: |
