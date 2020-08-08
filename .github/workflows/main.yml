@@ -61,6 +61,6 @@ jobs:
           base: master
           title: 'Updates site files from latest Actions build'
       
-       - name: Auto-merge
-          uses: ridedott/merge-me-action@master
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Auto-merge
+        uses: ridedott/merge-me-action@master
+        github_token: ${{ secrets.GITHUB_TOKEN }}
