@@ -64,4 +64,6 @@ jobs:
       - name: Auto-merge
         uses: ridedott/merge-me-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_LOGIN: smithjw1
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_METHOD: MERGE
