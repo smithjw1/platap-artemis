@@ -23,13 +23,13 @@ jobs:
             submodules: true
 
       - name: Make destination directory for compiled CSS
-        run: mkdir -vp /tmp/platapp-artemis/assets/css
+        run: mkdir -vp /tmp/platapp-artemis/
 
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.2.6
         with:
           source: styles.scss
-          destination: /tmp/platapp-artemis/assets/css/styles.css
+          destination: /tmp/platapp-artemis/styles.css
 
       - name: Checkout destination Git branch
         uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
             fetch-depth: 1
 
       - name: Move compiled CSS to path within pr-pages branch
-        run: mv /tmp/platapp-artemis/assets/css .
+        run: mv /tmp/platapp-artemis/styles.css .
 
       - name: Add and Commit changes to pr-pages branch
         run: |
