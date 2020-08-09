@@ -31,16 +31,10 @@ jobs:
           source: styles.scss
           destination: /tmp/platapp-artemis/styles.css
 
-      - name: Checkout destination Git branch
-        uses: actions/checkout@v2
-        with:
-            ref: pr-compile
-            fetch-depth: 1
-
       - name: Move compiled CSS to path within pr-pages branch
         run: mv /tmp/platapp-artemis/styles.css .
 
-      - name: Add and Commit changes to pr-pages branch
+      - name: Add and Commit changes
         run: |
           git config --local user.email 'action@github.com'
           git config --local user.name 'GitHub Action'
@@ -51,19 +45,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: pr-compile
-
-      - name: Initialize Pull Request
-        uses: gha-utilities/init-pull-request@v0.0.4
-        with:
-          pull_request_token: ${{ secrets.GITHUB_TOKEN }}
-          head: pr-compile
-          base: master
-          title: 'Updates site files from latest Actions build'
-      
-      - name: Auto-merge
-        uses: ridedott/merge-me-action@master
-        with:
-          GITHUB_LOGIN: smithjw1
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MERGE_METHOD: MERGE
+          branch: master
