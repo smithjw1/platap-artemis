@@ -7,19 +7,19 @@ $color-primary: #555;
 $color-white: #ffffff;
 $color-links: #60B1E2;
 $color-accent: #DE3A2F;
-$color-highlight: #C74E91;
+$color-highlight: rgb(198, 78, 144);
 
 
 .site {
-	padding: 0 20px;
+	padding: 0 4vw;
 	margin-top: 4vh;
-	max-width: none;	
-	font-size: 16px;
-	font-size: 1vw;
 }
-@media (max-width: 876px) {
-	.site {font-size: 2vw;}
+
+.content-area {
+	padding-right: 4vw;
 }
+
+
 
 /* Links */
 .site-main a,
@@ -106,12 +106,20 @@ a.tag {
 	margin: 0 0 -1em 0;
 	background: #fff;
 	color: $color-accent;
-	padding: 1rem 0 0 1.6rem;
+	padding: 1rem 0 1em 1.6rem;
 }
 
-.home .o2-app-page-title {
+.home .o2-app-page-title, 
+.oblique-strategy {
 	display: none;
 }
+
+.sticky .o2-post {
+	border: none;
+	border-top: 5px solid $color-highlight;
+	background: none;
+}
+
 
 .o2-app-new-post {
 	margin-bottom: 2em
@@ -174,12 +182,13 @@ li.o2-filter-widget-item:hover a:before {
 	}
 }
 
-.site-footer {
+.site-footer,
+.comment-subscription-form {
 	color: $color-white;
 }
 
 .navigation-main {
-	max-width: none;
+	padding: 0 4vw;
 	background: none;
 	ul li.current-menu-item a {
 		background: none;
@@ -213,7 +222,6 @@ li.o2-filter-widget-item:hover a:before {
 @media (max-width: 876px) {
 	.site-header {
 		background: #ffffff;
-		padding: 20px;
 	}
 	#masthead .hgroup {float: none}
 	#secondary {
